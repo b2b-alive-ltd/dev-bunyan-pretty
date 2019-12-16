@@ -138,11 +138,11 @@ process.on('SIGTERM', () => cleanupAndExit())
 process.on('SIGHUP', () => cleanupAndExit())
 process.on('SIGBREAK', () => cleanupAndExit())
 
-function cleanupAndExit () {
+function cleanupAndExit() {
   setTimeout(() => process.exit(0), 500)
 }
 
-function exit () {
+function exit() {
   process.exit(0)
 }
 
@@ -154,7 +154,7 @@ pump(process.stdin, pretty(process.stdout, opts))
 
 // ────────────────────────────────  private  ──────────────────────────────────
 
-function onValidationFail (msg) {
+function onValidationFail(msg) {
   // eslint-disable-next-line no-console
   console.error(`
     ${chalk.red.bold(msg)}
